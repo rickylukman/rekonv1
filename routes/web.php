@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/refund', [RefundController::class, 'index']);
+Route::get('/refund', [RefundController::class, 'index'])->name('refundindex');
+Route::post('/insertrefund', [RefundController::class, 'insertrefund'])->name('insertrefund');
