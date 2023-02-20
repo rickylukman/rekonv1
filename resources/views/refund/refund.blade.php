@@ -112,6 +112,7 @@
             <th scope="col">No Va</th>
             <th scope="col">Tgl Trx</th>
             <th scope="col">Tgl Refund</th>
+            <th scope="col">Aksi</th>
         </tr>
     </thead>
     <tbody>
@@ -122,6 +123,10 @@
             <td>{{$d->no_va}}</td>
             <td>{{$d->tgl_trx}}</td>
             <td>{{$d->tgl_refund}}</td>
+            <td>
+                <a href='/showdatarefund/{{$d->id}}' class="btn btn-warning">Edit</a>
+                <a class="btn btn-danger">Delete</a>
+            </td>
         </tr>
         @endforeach
     </tbody>
