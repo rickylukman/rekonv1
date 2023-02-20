@@ -125,7 +125,7 @@
             <td>{{$d->tgl_refund}}</td>
             <td>
                 <a href='/showdatarefund/{{$d->id}}' class="btn btn-warning">Edit</a>
-                <a class="btn btn-danger">Delete</a>
+                <a href='/deletedatarefund/{{$d->id}}' class="btn btn-danger">Delete</a>
             </td>
         </tr>
         @endforeach

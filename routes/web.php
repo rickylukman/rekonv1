@@ -20,5 +20,8 @@ Route::get('/', function () {
 
 Route::get('/refund', [RefundController::class, 'index'])->name('refundindex');
 Route::post('/insertrefund', [RefundController::class, 'insertrefund'])->name('insertrefund');
+
 Route::get('/showdatarefund/{id}', [RefundController::class, 'showdata'])->name('showdata');
 Route::post('/updatedatarefund/{id}', [RefundController::class, 'updatedata'])->name('updatedata');
+
+Route::get('/deletedatarefund/{id}', [RefundController::class, 'deletedata'])->name('deletedata');

@@ -27,4 +27,10 @@ class RefundController extends Controller
         $data->update($request->all());
         return redirect()->route('refundindex')->with('success','Data Berhasil Diubah!');
     }
+
+    public function deletedata($id) {
+        $data = Refund::find($id);
+        $data->delete();
+        return redirect()->route('refundindex')->with('success','Data Berhasil Dihapus!');
+    }
 }
