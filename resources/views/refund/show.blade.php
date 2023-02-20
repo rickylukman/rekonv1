@@ -78,6 +78,7 @@
     </div>
     
     <button type="submit" class="btn btn-primary">Submit</button>
+    <a href='/refund' class="btn btn-danger">Back</a>
 </form>
 
 @endsection

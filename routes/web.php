@@ -25,3 +25,5 @@ Route::get('/showdatarefund/{id}', [RefundController::class, 'showdata'])->name(
 Route::post('/updatedatarefund/{id}', [RefundController::class, 'updatedata'])->name('updatedata');
 
 Route::get('/deletedatarefund/{id}', [RefundController::class, 'deletedata'])->name('deletedata');
+
+Route::post('/importexcelrefund', [RefundController::class, 'importdata'])->name('importdata');

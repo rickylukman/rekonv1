@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Refund;
+use Illuminate\Http\Request;
+use App\Imports\RefundImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RefundController extends Controller
 {
@@ -36,5 +38,15 @@ class RefundController extends Controller
         $data = Refund::find($id);
         $data->delete();
         return redirect()->route('refundindex')->with('success','Data Berhasil Dihapus!');
+    }
+
+    public function importdata(Request $request){
+        $data = $request->file('file');
+
+        $namafile = $data->getClientOriginalName();
+        $data->move('RefundData', $namafile);
+
+        Excel::import(new RefundImport, \public_path('/RefundData/'.$namafile));
+        return \redirect()->back();
     }
 }

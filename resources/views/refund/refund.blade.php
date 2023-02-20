@@ -5,6 +5,7 @@
 
 <div class="container mb-2">
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal" data-whatever="@add">Tambah Data</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#importModal" data-whatever="@import">Import Data</button>
     @if($message = Session::get('success'))
         <div class="alert alert-success m-1" role="alert">
             {{$message}}
@@ -99,6 +100,31 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Tambah</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="importModalEx" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="importModalEx">Import Data</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form action="/importexcelrefund" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="file" name="file" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
         </form>
         </div>
