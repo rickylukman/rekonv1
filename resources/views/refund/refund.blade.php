@@ -105,6 +105,14 @@
     </div>
 </div>
 
+<form action="/refund" method="GET">
+    <div class="form-group row">
+        <div class="col-sm-3">
+        <!-- <input type="search" class="form-control" id="inputSearch" name="inputSearch"> -->
+        </div>
+    </div>
+</form>
+
 <table class="table">
     <thead class="thead-dark">
         <tr>

@@ -7,8 +7,12 @@ use App\Models\Refund;
 
 class RefundController extends Controller
 {
-    public function index(){
-        $data = Refund::all();
+    public function index(Request $request) {
+        if($request->has('inputSearch')){
+            $data = Refund::where('invoice','LIKE','%'.$request->inputSearch.'%');
+        } else {
+            $data = Refund::all();
+        }
         return view('refund.refund',compact('data'));
     }
 
